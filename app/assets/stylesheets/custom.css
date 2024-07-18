@@ -1,0 +1,17 @@
+.card-body {
+  background-color: #f8f9fa; /* Light gray background */
+  border: 1px solid #dee2e6; /* Light gray border */
+  padding: 20px; /* Padding inside the card body */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 20px; /* Space between cards */
+}
+
+.card-body h5 {
+  font-size: 1.25rem; /* Custom font size for card title */
+  margin-bottom: 10px; /* Space below card title */
+}
+
+.card-body p {
+  margin-bottom: 10px; /* Space below each paragraph */
+}

@@ -1,0 +1,12 @@
+<div id="<%= dom_id(inventory_item) %>">
+
+  <div id="inventory_item_<%= inventory_item.id %>" class="card mb-3">
+    <div class="card-body">
+      <h4 class="card-title"><%= inventory_item.name %></h4>
+      <p class="card-text">
+        <%= country_name_from_code(inventory_item.location) %> |
+        <strong><%= inventory_item.quantity %></strong><br>
+      </p>
+    </div>
+  </div>
+</div>

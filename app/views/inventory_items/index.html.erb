@@ -1,0 +1,18 @@
+<div id="inventory-items" class="container">
+  <h3 class="my-4">Inventory Items</h3>
+  <%= turbo_frame_tag "inventory_items" do %>
+    <%= render @inventory_items %>
+  <% end %>
+</div>
+
+<%= action_cable_meta_tag %>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    App.cable.subscriptions.create("InventoryChannel", {
+      received(data) {
+        const element = document.getElementById(`inventory_item_${data.id}`);
+        element.outerHTML = data.html;
+      }
+    });
+  });
+</script>

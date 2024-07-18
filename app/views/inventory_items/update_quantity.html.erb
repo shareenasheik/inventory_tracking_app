@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h3 class="mb-4">Update Inventory Item Quantity</h3>
+  <%= form_with url: update_quantity_inventory_items_path, method: :patch, data: { controller: "inventory", action: "turbo:submit-end->inventory#resetForm" }, html: { id: "inventory-form" } do %>
+    <div class="mb-3 row">
+      <label for="inventory_item_id" class="col-sm-3 col-form-label">Select Inventory Item</label>
+      <div class="col-sm-9">
+        <%= select_tag :inventory_item_id, options_from_collection_for_select(@inventory_items, :id, :name), include_blank: true, class: 'form-control', data: { action: "change->inventory#selectItem" } %>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
+      <div class="col-sm-9">
+        <%= number_field_tag :quantity, nil, class: 'form-control', data: { inventory_target: "quantity" }, min: 0 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-9 offset-sm-3">
+        <%= submit_tag 'Update', class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
